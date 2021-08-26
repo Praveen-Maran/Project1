@@ -47,3 +47,37 @@ body{
 	cursor: pointer;
 	border-radius: 5px;
 }
+/*Dashboard styles*/
+.dashboard{
+	margin: 10px;
+}
+.header{
+	margin-bottom: 10px;
+	text-align: center;
+	padding: 5px;
+	background-color: #fff;
+	color: #003366;
+}
+.table{
+	display: flex;
+	flex-direction: column;
+}
+.table h2{
+	color: #003366;
+}
+table{
+	width: 30%;
+	border-collapse: collapse;
+	
+}
+thead{
+	background-color: #003366;
+	color: #fff;
+}
+tr,td{
+	text-align: left;
+	padding: 5px;
+}
+tbody tr:nth-child(even){
+	background-color: #fff;
+}
