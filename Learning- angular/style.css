@@ -1,0 +1,31 @@
+*{
+	box-sizing: border-box;
+	outline: none;
+}
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #e6f2ff;
+}
+.table{
+	position: absolute;
+	top: 20%;
+	left: 30%;
+	width: 100%;
+}
+table{
+	width: 30%;
+	border-collapse: collapse;
+	
+}
+thead{
+	background-color: #003366;
+	color: #fff;
+}
+tr,td{
+	text-align: left;
+	padding: 5px;
+}
+tbody tr:nth-child(even){
+	background-color: #fff;
+}
