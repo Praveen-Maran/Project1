@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.DAO.DataDAO;
 import com.spring.api.Student;
+
 
 @Controller
 public class FirstController {
@@ -22,11 +24,27 @@ public class FirstController {
 
 		List<Student> studentList = DataDAO.loadData();
 		
-		for(Student tempStudent : studentList) {
-			System.out.println(tempStudent);
-		}
+//		for(Student tempStudent : studentList) {
+//			System.out.println(tempStudent);
+//		}
 		model.addAttribute("students", studentList);
 
 		return "data-list";
+	}
+	
+	@GetMapping("/addStudent")
+	public String addStudent(Model model) {
+		
+		Student student = new Student();
+		model.addAttribute("student", student);
+		return "addStudent";
+	}
+	
+	@ResponseBody
+	@GetMapping("/saveStudent")
+	public String saveStudent(Student student) {
+		
+		DataDAO.savedStudent(student); 
+		return "student saved..";
 	}
 }
