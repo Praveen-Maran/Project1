@@ -25,5 +25,16 @@ public class DataDAOImpl implements DataDAO {
 		
 		return theListofStudent;
 	}
+	@Override
+	public void savedStudent(Student student) {
+		
+		Object[] sqlParameters = {student.getSname(), student.getRollnum(), student.getDept(), student.getMail()};
+		String sql = "insert into member(sname, rollnum, dept, mail) values(?, ?, ?, ?)";
+		jdbcTemp.update(sql, sqlParameters);
+		
+		System.out.println("Data entered successfully...");
+		
+	}
+
 
 }
