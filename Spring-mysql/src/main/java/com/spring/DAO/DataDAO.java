@@ -6,4 +6,5 @@ import com.spring.api.Student;
 public interface DataDAO {
 		
 	List<Student> loadData();
+	void savedStudent(Student student);
 }
