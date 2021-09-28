@@ -23,10 +23,7 @@ public class FirstController {
 	public String showDataList(Model model) {
 
 		List<Student> studentList = DataDAO.loadData();
-		
-//		for(Student tempStudent : studentList) {
-//			System.out.println(tempStudent);
-//		}
+
 		model.addAttribute("students", studentList);
 
 		return "data-list";
@@ -38,13 +35,5 @@ public class FirstController {
 		Student student = new Student();
 		model.addAttribute("student", student);
 		return "addStudent";
-	}
-	
-	@ResponseBody
-	@GetMapping("/saveStudent")
-	public String saveStudent(Student student) {
-		
-		DataDAO.savedStudent(student); 
-		return "student saved..";
 	}
 }
